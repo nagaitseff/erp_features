@@ -78,7 +78,7 @@ pipeline {
                             testbase = "test_${templateDb}"
                             testbaseConnString = projectHelpers.getConnString(server1c, testbase, agent1cPort)
                             //backupPath = "${env.WORKSPACE}/build/temp_${templateDb}_${utils.currentDateStamp()}" //закомментирован рабочий каталог Дженкинс
-							backupPath = "${env.pathBackupSql }/build/temp_${templateDb}_${utils.currentDateStamp()}" //путь по параметру 
+							backupPath = "${env.pathBackupSql }/temp_${templateDb}_${utils.currentDateStamp()}" //путь по параметру 
                             
 							// 1. Удаляем тестовую базу из кластера (если он там была) и очищаем клиентский кеш 1с
                             dropDbTasks["dropDbTask_${testbase}"] = dropDbTask(
